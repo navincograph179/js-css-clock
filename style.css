@@ -1,0 +1,225 @@
+html {
+    background: #018ded url(https://unsplash.it/1500/1000?image=881&blur=5);
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    font-family: "helvetica neue";
+    text-align: center;
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 30rem;
+    min-height: 50rem;
+    padding: 2rem;
+    align-items: center;
+    background-color: #239e65;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+h3 {
+    color: rgb(250, 249, 245);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    margin: 30px 0 5px 0;
+}
+
+.clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 15rem;
+    border: 10px solid white;
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 0 2px #efefef,
+        inset 0 0 8px black, 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.clock::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ae2012;
+    transform: translate(-50%, -50%);
+}
+/* Marker at 12 o'clock */
+.marker-12::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 5px;
+    height: 15px;
+    background-color: #ffffff;
+    transform: translateX(-50%);
+  }
+
+  /* Marker at 3 o'clock */
+  .marker-3::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 15px;
+    height: 5px;
+    background-color: #ffffff;
+    transform: translateY(-50%);
+  }
+
+  /* Marker at 6 o'clock */
+  .marker-6::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 5px;
+    height: 15px;
+    background-color: #ffffff;
+    transform: translateX(-50%);
+  }
+
+  /* Marker at 9 o'clock */
+  .marker-9::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 15px;
+    height: 5px;
+    background-color: #ffffff;
+    transform: translateY(-50%);
+  }
+
+   /* Numbers */
+   .number-12, .number-3, .number-6, .number-9 {
+    position: absolute;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 20; /* Ensure numbers are on top */
+  }
+
+  .number-12 {
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .number-3 {
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+  }
+
+  .number-6 {
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .number-9 {
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+  }
+.hand {
+    position: absolute;
+    height: 80px;
+    width: 4px;
+    transform-origin: center top;
+}
+
+.hand--hours {
+    background: #ae2012;
+    height: 50px;
+}
+
+.hand--minutes {
+    background: #e9d8a6;
+    width: 3px;
+    height: 70px;
+}
+
+.hand--seconds {
+    background: #94d2bd;
+    width: 2px;
+    transform: rotate(360deg);
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: auto;
+    border: 2px solid rgb(255, 255, 253);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.intro p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    width: 250px;
+}
+.intro button {
+    padding: 6px 12px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #ae2012;
+}
+
+button a {
+    text-decoration: none;
+    color: #ffff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    .container {
+        width: 35rem;
+        height: 60rem;
+    }
+    .clock {
+        width: 20rem;
+        height: 20rem;
+        border: 1.2rem solid white;
+        margin: 1.5rem auto;
+        position: relative;
+        padding: 2.5rem;
+    }
+    h3 {
+        font-size: 3.6rem;
+    }
+    .intro p {
+        font-size: 2rem;
+    }
+    button a {
+        font-size: 2rem;
+    }
+}
+ 
